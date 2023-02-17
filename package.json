@@ -1,0 +1,35 @@
+{
+  "name": "client-server-starter",
+  "packageManager": "yarn@3.3.1",
+  "private": true,
+  "license": "ISC",
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "server:dev": "yarn workspace server dev",
+    "server:test": "yarn workspace server test",
+    "server:build": "yarn workspace server build",
+    "client:dev": "yarn workspace client dev",
+    "client:test": "yarn workspace client test",
+    "client:build": "yarn workspace client build",
+    "client:preview": "yarn workspace client preview",
+    "build": "run-p -cl server:build client:build",
+    "dev": "run-p -cl server:dev client:dev",
+    "test": "run-p -cl 'client:test --coverage' 'server:test --coverage'",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "@types/eslint": "^8.21.0",
+    "@typescript-eslint/eslint-plugin": "^5.46.1",
+    "@typescript-eslint/parser": "^5.46.1",
+    "eslint": "^8.34.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "globals": "^13.20.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.8.4"
+  }
+}
